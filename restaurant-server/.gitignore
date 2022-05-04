@@ -1,0 +1,31 @@
+# IDE - VSCode
+.vscode/*
+.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# dependencies
+node_modules
+dist
+build
+logs
+/.pnp
+.pnp.js
+uploads
+
+# System Files
+package-lock.json
+.env
+*.code-workspace
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

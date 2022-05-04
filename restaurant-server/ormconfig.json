@@ -1,0 +1,17 @@
+{
+    "type": "mysql",
+    "host": "localhost",
+    "port": 3306,
+    "username": "root",
+    "password": "hari1234",
+    "database": "restaurant",
+    "entities": ["build/entities/*.js"],
+    "maxQueryExecutionTime": 20000,
+    "synchronize": false,
+    "logging": true,
+    "migrations": ["build/migration/*.js"],
+    "cli": {
+      "migrationsDir": "src/migration"
+    }
+  }
+  
