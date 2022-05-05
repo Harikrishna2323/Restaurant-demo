@@ -6,9 +6,32 @@ import {createConnection} from "typeorm";
 import { Dishes } from './entities/Dishes';
 import { Users } from './entities/Users';
 import { Orders } from './entities/Orders';
+import { ApolloServer } from 'apollo-server-express';
+import schema from './schemas/plugRoots'
+import {} from './schemas/plugRoots';
+import { ApolloServerPluginUsageReporting } from "apollo-server-core";
 
 const app = express();
 app.use(express.json());
+
+
+async function apolloStartServer() {
+    let server = new ApolloServer({
+        schema,
+        introspection: true,
+        playground: true,
+      });
+      await server.start();
+    
+      server.applyMiddleware({
+        app,
+        path: "/restaurant",
+        cors: {
+            origin: "*",
+            credentials: true
+        }
+    });
+}
 
 
 
@@ -37,6 +60,13 @@ initDB().then(() => console.log(`Connection to DB successful.`)).catch(err => co
 // DB_SCHEMA=restaurant
 // LOG_TYPEORM=true
 
-initDB().then(()=> app.listen(PORT, () => console.log(`Server started on port: ${PORT}`)));
+initDB().then(()=>{
+    app.listen(PORT, () => {
+        apolloStartServer();
+        console.log(`Server started on port: ${PORT}`)
+    })
+})
+    
+
 
 

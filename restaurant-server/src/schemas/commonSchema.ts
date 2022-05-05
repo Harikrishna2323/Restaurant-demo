@@ -1,10 +1,12 @@
 import { gql } from 'apollo-server-express';
-import {login} from '../resolvers/LoginResolver'
+import {login} from '../resolvers/LoginResolver';
+import {getDishes} from  '../resolvers/dishResolver'
 
 export const commonResolvers = {
     Query: {},
     Mutation: {
         login: login,
+        getDishes: getDishes
     }
 }
 
@@ -21,12 +23,20 @@ export const responseMetaData = gql`
         validity: String
     }
 
+    type GetDishesResponse {
+        metadata: ResponseMetaData!
+        dishes: Dishes
+    }
+
     type Query{
-        __: Boolean
+        query: Boolean
     }
 
     type Mutation{
         login(email: String!, password: String!): LoginResponse
+        getDishes(id: Int!, title: String) : GetDishesResponse
     }
+
+    
 
 `;

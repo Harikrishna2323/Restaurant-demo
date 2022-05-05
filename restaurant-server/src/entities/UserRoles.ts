@@ -19,7 +19,6 @@ import {
     @Column({ type: 'tinyint', unsigned: true, nullable: false, default: 1 })
     activeStatus: number;
 
-    
     @OneToMany(() => Users, user => user.role, {
       onUpdate: 'RESTRICT',
       onDelete: 'RESTRICT',

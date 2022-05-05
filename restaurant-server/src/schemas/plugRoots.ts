@@ -17,7 +17,7 @@ export const customTypeDefs = gql`
 
 const executableSchema = makeExecutableSchema({
   typeDefs: [customTypeDefs,responseMetaData, userSchema, orderSchema, dishSchema],
-  resolvers: [commonResolvers],
+  resolvers: [commonResolvers ],
 });
 
 export default mergeSchemas({

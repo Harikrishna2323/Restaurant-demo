@@ -6,6 +6,7 @@ export const dishSchema = gql`
     title: String!
     description: String!
     price: Int!
+    category: Categories
     available: Boolean!
     quantity: Int!
   }
@@ -17,7 +18,7 @@ export const dishSchema = gql`
     CONTINENTAL
   }
 
-  type Dish {
+  type Dishes {
     id: Int!
     title: String!
     description: String!

@@ -1,7 +1,7 @@
 import {MigrationInterface, QueryRunner} from "typeorm";
 
-export class newDb1651729166846 implements MigrationInterface {
-    name = 'newDb1651729166846'
+export class newDb1651747069001 implements MigrationInterface {
+    name = 'newDb1651747069001'
 
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.query("CREATE TABLE `parent_entity` (`id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, `createdAt` datetime(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6), `updatedAt` datetime(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6), `deletedAt` datetime(6) NULL, `createdByUId` varchar(12) NULL, `modifiedByUId` varchar(12) NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB");
