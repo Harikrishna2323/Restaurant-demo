@@ -10,11 +10,7 @@ export const dishSchema = gql`
     quantity: Int!
   }
 
-  type Images {
-    id: Int!
-    imagePath: String!
 
-  }
   enum Categories{
     INDIAN
     CHINEESE
@@ -29,5 +25,6 @@ export const dishSchema = gql`
     price: Int!
     available: Boolean!
     quantity: Int!
+
   }
 `;

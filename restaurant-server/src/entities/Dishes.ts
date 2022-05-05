@@ -1,7 +1,7 @@
 import { Orders } from './Orders';
 import {Column, Entity, JoinTable, ManyToOne, OneToMany,JoinColumn} from "typeorm";
 import ParentEntity from "./ParentEntity";
-import { Image } from "./Image";
+
 
 export enum Categories {
     INDIAN = "indian",
@@ -23,8 +23,8 @@ export class Dishes extends ParentEntity {
 
     @Column({type: "int", default: 1}) quantity: number;
 
-    @OneToMany(() => Image, (img) => img.dish)
-    images: Image[];
+    // @OneToMany(() => Image, (img) => img.dish)
+    // images: Image[];
 
     @ManyToOne(() => Orders, (order) => order.id)
     @JoinColumn({ name: "id" })
