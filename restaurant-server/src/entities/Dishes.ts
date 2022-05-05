@@ -9,7 +9,7 @@ export enum Categories {
     CONTINENTAL = "continental",
 }
 
-@Entity()
+@Entity({name: "Dishes"})
 export class Dishes extends ParentEntity {
     @Column({type: "varchar", length: 40, nullable: false}) title: string;
 

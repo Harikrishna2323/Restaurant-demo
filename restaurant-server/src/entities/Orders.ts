@@ -16,7 +16,7 @@ export enum OrderStatus {
     CANCELLED = "CANCELLED",
   }
 
-@Entity()
+@Entity({name: "Orders"})
 export class Orders extends ParentEntity {
 
    @Column({
